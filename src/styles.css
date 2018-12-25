@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+.logo-nav{
+    background: url(./assets/images/valuelabs_logo_web.png) no-repeat center center;
+    width: 200px;
+    height: 63px;
+    text-indent: -9999px;
+  } 
+  .footer-info{
+      margin:0 auto;
+  }
+  .card-row{
+   /* margin-right: 0px !important;
+   // margin-left: 0px !important;*/
+  }
+
+  .card-row .card{
+    margin:10px;
+    width:250px;
+    padding-top: 25px;
+
+  }
+  .card-row .btn{
+      margin:0px 10px 0px 10px;
+  }
+
+  .card-img-top-modify {
+    max-width: 50%;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 15px solid rgb(63, 61, 61);
+    box-shadow: 0 0 0 15px lightgrey;
+    cursor: pointer;
+}
+
+.section2{
+    border: 1px solid lightgrey;
+    margin-top:40px;
+    margin-bottom: 40px;
+}
+.section-heading{
+    width: 100%;
+    height: 40px;
+    background-color: darkgrey;
+    color: white;
+}
+.section-heading p{
+    margin: 7px 0 7px 15px;
+}
+.card-body{
+    text-align: center;
+}
+.detailed-first{
+    height: auto;
+    float: left;
+    margin-bottom: 5%;
+}
+.detailed-second{
+    width: 30%;
+    float: left;
+
+}
+.detailed-last{
+    float: right;
+
+}
+.btn-back{
+    margin: 30px 0px 0px 0px;
+}
+.card-title-det{
+    margin-left: 130px;
+}
+.card-text-det{
+    margin-left: 130px; 
+}
+
+.card-img-detailed-modify{
+    max-width: 100px;
+    border-radius: 50%;
+    border: 15px solid rgb(63, 61, 61);
+    box-shadow: 0 0 0 15px lightgrey;
+    float: left;
+    cursor: pointer;
+}
+.margin-hr{
+    margin-top:20%;
+}
+.table-detailed{
+    background-color: #e2e9f1 !important;
+}

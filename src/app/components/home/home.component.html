@@ -1,0 +1,96 @@
+
+<div class="container" style="margin-top:30px" id="landingpage">
+
+  <form>
+    <div class="input-group">
+      <input type="text" class="form-control" id="searchkey" (keypress)="searchResult(myInput.value)" (keyup)="searchResult(myInput.value)" placeholder="Search Here" #myInput>
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="submit">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class=" row card-row">
+
+    <div *ngFor="let user of userList;let i=index" class="col-md-3 col-sm-12 col-lg-3">
+      <div *ngIf="i<8" class="card">
+
+        <img (click)="getDetailedInfo(user.login)" *ngIf="user.avatar_url" class="card-img-top-modify" src="{{user.avatar_url}}" alt="Card image">
+
+        <div class="card-body">
+          <h4 *ngIf="user.login" class="card-title">{{user.login}}</h4>
+      <p  class="card-text">{{checkSiteAdmin(user.site_admin)}}</p>
+          <a href="javascript:void()" (click)="addUser(user)" class="btn btn-primary">Add</a>
+          <a href="javascript:void()" (click)="cancelUser(user)" class="btn btn-light">Cancel</a>
+        </div>
+      </div>
+    </div>
+
+  
+
+  </div>
+
+  <!--
+    for shortlisted users
+  -->
+
+  <div class=" row card-row section2">
+    <div class="section-heading">
+      <p>Shortlisted Users</p>
+    </div>
+    <div *ngFor="let user of shortlistedUserList;let i=index" class="col-md-3 col-sm-12 col-lg-3">
+        <div  class="card">
+
+            <img *ngIf="user.avatar_url" (click)="getDetailedInfo(user.login)" class="card-img-top-modify" src="{{user.avatar_url}}" alt="Card image">
+    
+            <div class="card-body">
+              <h4 *ngIf="user.login" class="card-title">{{user.login}}</h4>
+          <p  class="card-text">{{checkSiteAdmin(user.site_admin)}}</p>
+          <a href="javascript:void()" (click)="removeShortlisted(user)" class="btn btn-danger">Remove</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+<!--
+    Detailed page
+  -->
+<div class="container" style="margin-top:30px" id="detailedpage">
+  <div class="row">
+    <div class="col-md-2 col-lg-2"></div>
+    <div class="col-md-8 col-sm-12 col-lg-8">
+      
+      <div class="detailed-first">
+          <img *ngIf="userData.avatar_url" class="card-img-detailed-modify" src="{{userData.avatar_url}}" alt="Card image">
+          <h4  *ngIf="userData.login" class="card-title card-title-det">{{userData.login}}</h4>
+          <p   class="card-text card-text-det">{{checkSiteAdmin(userData.site_admin)}}</p>
+        </div>
+     
+      <div class="detailed-last">
+          <button (click)="goToLandingPage()" class="btn btn-info btn-back">Back</button>  
+      </div>
+    <hr class="margin-hr">
+      <div class=" table-responsive">
+        
+          <table class="table table-bordered table-detailed">
+              
+              <tbody>
+                <tr *ngFor="let item of userData | keyvalue">
+                  <td><q>{{item.key}}</q></td>
+                  <td> <q>{{item.value}}</q></td>              
+                </tr>              
+               
+              </tbody>
+            </table>
+
+      </div>
+      
+    </div>
+    <div class="col-md-2 col-lg-2"></div>
+  </div>
+</div>
